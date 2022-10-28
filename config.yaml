@@ -1,0 +1,32 @@
+# ---- preset paras ---- (for config only)
+test: False # True
+suffix: # test # adremove_only_last_iter=0.5 # ad_loss_mask_filter # filter_with_adremove # filter_with_1_epoch # adr_final_iter # backdoor_remove_insert # fine-tune_epoch=10
+
+# -- regularizer --
+gradient_clipping: True
+
+# ----- Regular paras ------
+checkpoint_dir: 'checkpoints'
+dataset: imdb
+encoding_max_length: 64
+test_ratio: 0.15 # select a random subset for testing
+class_balanced_sampling: True
+data_dir: '/data1/chengyu/bert_classification/data'
+opt: adamw
+model: bert-base-uncased
+scheduler: linear
+resume: False
+epochs: 10
+lr: 2e-5
+batch_size: 128
+wd: 0 # 1e-2
+momentum:
+gamma:
+
+gpu_id: 7
+manual_seed: # 7
+state_path:
+save_model: False # True # Save the model after completing training?
+save_checkpoint: False # True # save checkpoint for continue training
+
+

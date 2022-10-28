@@ -6,7 +6,6 @@ tmp/
 # *.sh
 configs/
 # migrate.sh
-*.yaml
 
 # tmp dirs and files
 checkpoint
