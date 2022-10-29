@@ -11,7 +11,7 @@ dataset: imdb
 encoding_max_length: 64
 test_ratio: 0.15 # select a random subset for testing
 class_balanced_sampling: True
-data_dir: '/data1/chengyu/bert_classification/data'
+data_dir: '/data1/zihan/test_removedev/data'
 opt: adamw
 model: bert-base-uncased
 scheduler: linear

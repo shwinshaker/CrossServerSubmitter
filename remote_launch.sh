@@ -9,10 +9,10 @@
 # * make sure key-pair login is available
 
 # -- config remote working dir
-server='rackjesh'
-remote_dir='/data3/chengyu/text_classification'
-remote_data_dir='/data1/chengyu/bert_classification/data'
-remote_env='bert2'
+server='ds-serv1'
+remote_dir='/data1/zihan/test_removedev'
+remote_data_dir='/data1/zihan/test_removedev/data'
+remote_env='test_env'
 ssh $server "mkdir -p $remote_dir"
 ssh $server "mkdir -p $remote_dir/checkpoints"
 ssh $server "mkdir -p $remote_dir/logs"
@@ -45,7 +45,7 @@ trim() {
   echo "\$s"
 }
 
-source /home/chengyu/anaconda2/bin/activate $remote_env
+source /home/zihan/anaconda3/bin/activate $remote_env
 cd $path
 if [ \$(cat config.yaml | grep "^test:" | awk '{print\$2}') == 'True' ]; then
     python main.py | tee train.out

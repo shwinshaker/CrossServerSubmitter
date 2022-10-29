@@ -1,0 +1,22 @@
+server_name: ds-serv1
+
+local_source_folder: ./test_experiment/src
+remote_source_folder: /data1/zihan/test_experiment/src
+
+local_data_folder: ./test_data
+remote_data_folder: /data1/zihan/test_experiment/data
+
+remote_experiment_folder: /data1/zihan/test_experiment/experiments
+
+local_remote_logs_folder: ./test_experiment/remote_logs
+
+command:
+  - pwd
+  - ls
+  - echo {local_source_folder}
+  - echo {remote_source_folder}
+  - ls {remote_source_folder}
+  - which python
+  - source ~/anaconda3/bin/activate common
+  - which python
+  - CUDA_VISIBLE_DEVICES=0 python -c "import torch; a = torch.randn(32, 34).cuda() ** 2; print(a.sum())"

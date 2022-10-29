@@ -89,6 +89,7 @@ if __name__ == '__main__':
         with open('%s/%s/para.json' % (config['checkpoint_dir'], config['checkpoint']), 'w') as f:
             json.dump(config, f)
     else:
+        print(os.getcwd())
         with open('tmp/para.json', 'w') as f:
             json.dump(config, f)
 
